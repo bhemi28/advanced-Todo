@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-desktop: #eef2ff;
+  --color-window: #ffffff;
+  --color-retro-black: #0f0f0f;
+  --color-retro-indigo: #312e81;
+  --color-retro-pink: #ffade3;
+  --color-retro-blue: #a5dcff;
+  --color-retro-yellow: #fff59d;
+  --color-retro-green: #bbf7d0;
+  --color-retro-gray: #d1d5db;
+
+  --font-heading: 'VT323', monospace;
+  --font-mono: 'Space Mono', monospace;
+  --font-hand: 'Gloria Hallelujah', cursive;
+  
+  --shadow-hard: 4px 4px 0px 0px #0f0f0f;
+  --shadow-hard-sm: 2px 2px 0px 0px #0f0f0f;
+  --shadow-hard-lg: 8px 8px 0px 0px #0f0f0f;
+  --shadow-inset-hard: inset 3px 3px 0px 0px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    background-color: #f0f0f0;
+    /* background-image: radial-gradient(#343434 1px, transparent 1px); */
+    background-image: 
+    linear-gradient(90deg, #0d2567 1px, transparent 1px, transparent 99px, #bbb 1px),
+    linear-gradient(180deg, #0d2567 1px, transparent 1px, transparent 99px, #bbb 1px);
+    background-size: 20px 20px; /* The dot grid from your site */
+}
+
+/* Custom shadow for the "Neubrutalism" effect */
+.retro-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.retro-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.bg-dots {
+    /* background-image: radial-gradient(#343434 2px, transparent 2px); */
+    background-image: 
+    linear-gradient(90deg, #0d2567 1px, transparent 1px, transparent 99px, #bbb 1px),
+    linear-gradient(180deg, #0d2567 1px, transparent 1px, transparent 99px, #bbb 1px);
+
+    background-size: 24px 24px;
+}
+
+::-webkit-scrollbar {
+    width: 16px;
+    background: #eef2ff;
+    border-left: 3px solid #0f0f0f;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffade3;
+    border: 3px solid #0f0f0f;
+}
+
+.btn-press:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px 0px #0f0f0f !important;
+}
+
+.filter-btn-active {
+    background-color: #312e81 !important;
+    color: white !important;
+    box-shadow: inset 3px 3px 0px 0px rgba(0,0,0,0.5) !important;
+}
+
+.pixel-icon-btn:hover {
+    background-color: #f3f4f6;
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px 0px #0f0f0f !important;
+}

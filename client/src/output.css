@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+body {
+    font-family: "Space Mono", monospace;
+    background-color: #f0f0f0;
+    background-image: radial-gradient(#bcbcbc 1px, transparent 1px);
+    background-size: 20px 20px; /* The dot grid from your site */
+}
+
+/* Custom shadow for the "Neubrutalism" effect */
+.retro-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.retro-shadow-sm {
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
