@@ -58,9 +58,10 @@
 
 // implementing react hook for for understanding it.
 import { useForm } from "react-hook-form"
+import { useTodoContext } from "../../context/todoContext";
+import type { ICreateTodoDTO } from "../../types/todo.type";
 
 interface todoFormProps {
-  onCreate: (data: { title: string, description?: string }) => void
   onClose: () => void;
 }
 
@@ -69,12 +70,13 @@ interface ItodoFormDTO {
   description?: string;
 }
 
-const TodoForm = ({ onClose, onCreate }: todoFormProps) => {
+const TodoForm = ({ onClose }: todoFormProps) => {
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<ItodoFormDTO>({ defaultValues: { title: "", description: "default description" } });
+  const {createTodo} = useTodoContext()
 
   const onSubmit = (data: ItodoFormDTO) => {
-    onCreate(data);
+    createTodo(data as ICreateTodoDTO)
     reset();
     onClose();
   }

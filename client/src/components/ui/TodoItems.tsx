@@ -1,14 +1,15 @@
+import { useTodoContext } from "../../context/todoContext";
 import type { ITodo } from "../../types/todo.type";
 
 interface TodoItemProps {
   todo: ITodo;
   // onToggle: (id: number) => void;
-  onDelete: (id: number) => void; 
   onArchive: (id: number) => void;
 }
 
-const TodoItem = ({ todo, onDelete }: TodoItemProps) => {
+const TodoItem = ({ todo }: TodoItemProps) => {
   const isCompleted = todo.status === 'completed';
+  const {deleteTodo} = useTodoContext()
   
   return (
     <div className={`group flex items-center gap-4 p-4 border-3 border-retro-black shadow-hard-sm transition-none relative ${isCompleted ? 'bg-gray-50 opacity-80' : 'hover:bg-retro-blue/5'}`}>
@@ -53,7 +54,7 @@ const TodoItem = ({ todo, onDelete }: TodoItemProps) => {
           <span className="material-symbols-outlined">check_circle</span>
         </button>
         <button 
-            onClick={() => onDelete(todo.id)}
+            onClick={() => deleteTodo(todo.id.toString())}
             className="pixel-icon-btn w-10 h-10 border-2 border-retro-black bg-white shadow-hard-sm flex items-center justify-center text-gray-500" 
             title="Archive Task"
         >

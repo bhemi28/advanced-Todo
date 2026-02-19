@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useTodos } from "../../hooks/useTodo";
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItems";
+import { useTodoContext } from "../../context/todoContext";
 
 const TodoList = () => {
-  const { loading, error, todos, refetch, createTodo, deleteTodo } = useTodos();
+  const { loading, error, todos, refetch, createTodo, deleteTodo } = useTodoContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState<"all" | "completed" | "archived">("all");
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -89,8 +89,7 @@ const TodoList = () => {
           {/* Create Form Area */}
           {isFormOpen && (
               <TodoForm 
-                onClose={() => setIsFormOpen(false)} 
-                onCreate={(data) => createTodo({ ...data, status: 'pending' })} 
+                onClose={() => setIsFormOpen(false)}
               />
           )}
         </div>
@@ -115,7 +114,6 @@ const TodoList = () => {
                         key={todo.id} 
                         todo={todo} 
                         // onToggle={() => handleToggle(todo.id)} 
-                        onDelete={() => deleteTodo(String(todo.id))}
                         onArchive={() => handleArchive(todo.id)}
                     />
                  ))

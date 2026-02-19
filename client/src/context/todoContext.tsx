@@ -4,7 +4,7 @@ import type { IUseTodosReturns } from "../types/hooks/todo.hook.type";
 
 const todoContext = createContext<IUseTodosReturns | null>(null)
 
-const TodoProvider = ({ children }: { children: ReactNode }) => {
+export const TodoProvider = ({ children }: { children: ReactNode }) => {
     const todoStates = useTodos();
 
     return (
